@@ -29,6 +29,7 @@ var mostarOcultar = function(divtexte) {
 	var text1 = document.getElementById(text1);
 	var text2 = document.getElementById(text2);
 	var text3 = document.getElementById(text3);
+<<<<<<< HEAD
 	 if (text1.style.display == "block" ) {
 		text2.style.display = "none";
 		text3.style.display = "none";
@@ -66,6 +67,45 @@ function result(){
 }
 result();
 
+=======
+
+	 if (text1.style.display == "block" ) {
+		text2.style.display = "none";
+		text3.style.display = "none";
+	 }
+	   else	if(text2.style.display == "block"){
+		text1.style.display = "none";
+		text3.style.display = "none";
+	}
+
+
+    else if(text3.style.display == "block"){
+	text1.style.display = "none";
+	text2.style.display = "none";
+}
+*/
+
+
+//para determinar el resultado//
+var correctas = 0;
+function result(){
+	var uno = document.getElementsByName('quizz1');
+	var dos = document.getElementsByName('quizz2');
+	var tres = document.getElementsByName('quizz3');
+	var a = document.getElementsByName('test1');
+	var b = document.getElementsByName('test2');
+	var c = document.getElementsByName('test3');
+	var buenas =[uno[1], dos[2], tres[2], a[0], b[1], c[2]];  //repuestas correctas en un array
+	for(var i=0; i<=buenas.length;i++){
+		if(buenas[i].checked==true){
+			correctas += 1;
+		}                         //la idea es sumar uno a correctas si al marcar el test coincide con la correcta
+	}
+		console.log(correctas);
+}
+result();
+
+>>>>>>> e8baf57bc913c67851344f123635024ee1c4dfb5
 function enviarQuizz(){
 	var ok = document.getElementById('ok');
    ok.addEventListener('click', result);
